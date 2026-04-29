@@ -1,0 +1,11 @@
+title: Eizenwerk.com
+description: hobby-ish gamedev. This website contains my raw notes and documents my progress.
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/page/:num/"

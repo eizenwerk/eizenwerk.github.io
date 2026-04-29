@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var theme;
+        if (saved) {
+          theme = saved;
+        } else {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.body.className = theme + '-mode';
+      })();
+    </script>
+    <nav class="top-nav">
+      <div class="top-nav-inner">
+        <div class="top-nav-links">
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Blog</a>
+          <a href="{{ '/games' | relative_url }}"{% if page.url == '/games/' or page.url == '/games' %} class="active"{% endif %}>Games</a>
+          <a href="{{ '/learn' | relative_url }}"{% if page.url == '/learn/' or page.url == '/learn' %} class="active"{% endif %}>Learn</a>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark/light mode">☀️</button>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <header>
+        <a href="{{ '/' | relative_url }}" title="Back to Overview">
+          <img class="logo logo-dark" src="{{ '/assets/img/logo-dark.png' | relative_url }}" alt="Logo" />
+          <img class="logo logo-light" src="{{ '/assets/img/logo-light.png' | relative_url }}" alt="Logo" />
+        </a>
+
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        <!-- div class="social-icons">
+          <a href="mailto:eizenwerk@gmail.com" aria-label="Email" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
+          <a href="https://discord.gg/thisisaplaceholder123123" target="_blank" aria-label="Discord" title="Discord">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0019 1.3332-.946 2.4189-2.1568 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+          </a>
+          <a href="https://steamcommunity.com/id/thisisaplaceholder123123" target="_blank" aria-label="Steam" title="Steam">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.456-.401.957-1.5 1.41-2.455 1.011zm10.555-7.45c0-1.665-1.354-3.018-3.022-3.018-1.667 0-3.02 1.353-3.02 3.018 0 1.665 1.353 3.016 3.02 3.016 1.668 0 3.022-1.351 3.022-3.016zm-5.286-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
+          </a>
+        </div -->
+
+        <nav class="post-list">
+          <h3>Posts</h3>
+          <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off" />
+          <div id="search-results"></div>
+          <ul id="post-list">
+            <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Back to Overview</a></li>
+            {% for post in site.posts %}
+              <li>
+                <a href="{{ post.url | relative_url }}"
+                   {% if post.url == page.url %}class="active"{% endif %}>
+                  {{ post.date | date: "%Y-%m-%d" }} | {{ post.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </header>
+      <section>
+        {% if page.previous or page.next %}
+        <div class="post-nav">
+          {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="post-nav-prev" title="{{ page.previous.title }}">&#8592; {{ page.previous.title }}</a>
+          {% endif %}
+          {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="post-nav-next" title="{{ page.next.title }}">{{ page.next.title }} &#8594;</a>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {{ content }}
+
+        {% if page.previous or page.next %}
+        <div class="post-nav">
+          {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="post-nav-prev" title="{{ page.previous.title }}">&#8592; {{ page.previous.title }}</a>
+          {% endif %}
+          {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="post-nav-next" title="{{ page.next.title }}">{{ page.next.title }} &#8594;</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </section>
+      <footer>
+        <p><a href="mailto:eizenwerk@gmail.com">&copy; {{ site.time | date: "%Y" }} Eizenwerk.</a> · <a href="{{ '/privacy' | relative_url }}">Privacy</a></p>
+      </footer>
+    </div>
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <script>
+      (function() {
+        var isDark = document.body.classList.contains('dark-mode');
+        document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
+      })();
+
+      document.querySelector('.theme-toggle').addEventListener('click', function() {
+        var isDark = document.body.classList.contains('dark-mode');
+        var newTheme = isDark ? 'light' : 'dark';
+        document.body.className = newTheme + '-mode';
+        this.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+        localStorage.setItem('theme', newTheme);
+      });
+
+      // Search
+      var searchData = null;
+      fetch('{{ "/" | relative_url }}search.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) { searchData = data; });
+
+      document.getElementById('search-input').addEventListener('input', function() {
+        var query = this.value.toLowerCase().trim();
+        var resultsDiv = document.getElementById('search-results');
+        var postList = document.getElementById('post-list');
+
+        if (query.length < 2) {
+          resultsDiv.innerHTML = '';
+          postList.style.display = '';
+          return;
+        }
+
+        if (!searchData) return;
+
+        postList.style.display = 'none';
+        var html = '';
+
+        searchData.forEach(function(post) {
+          var content = post.content.toLowerCase();
+          var idx = content.indexOf(query);
+          if (idx === -1 && post.title.toLowerCase().indexOf(query) === -1) return;
+
+          html += '<div class="search-result">';
+          html += '<a href="' + post.url + '">' + post.title + '</a>';
+
+          if (idx !== -1) {
+            var start = Math.max(0, idx - 40);
+            var end = Math.min(content.length, idx + query.length + 40);
+            var snippet = post.content.substring(start, end);
+            snippet = snippet.replace(new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'), '<mark>$1</mark>');
+            html += '<p class="search-snippet">...' + snippet + '...</p>';
+          }
+
+          html += '</div>';
+        });
+
+        if (html === '') html = '<p class="search-no-results">No results found.</p>';
+        resultsDiv.innerHTML = html;
+      });
+    </script>
+    <script>
+      // YouTube click-to-load
+      document.querySelectorAll('.video-embed[data-yt]').forEach(function(el) {
+        var id = el.getAttribute('data-yt');
+        el.innerHTML =
+          '<img class="video-thumb" src="https://img.youtube.com/vi/' + id + '/hqdefault.jpg" alt="Video thumbnail" loading="lazy">' +
+          '<div class="video-play"></div>' +
+          '<div class="video-notice">Click to load video from YouTube</div>';
+        el.addEventListener('click', function() {
+          el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+          el.style.cursor = 'default';
+        });
+      });
+    </script>
+  </body>
+</html>

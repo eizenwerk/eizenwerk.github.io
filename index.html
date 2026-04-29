@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+  <div class="post-preview">
+    <div class="post-thumbnail">
+      <a href="{{ post.url | relative_url }}">
+        {% if post.content contains 'src="' %}
+          {% assign last_image = post.content | split: 'src="' | last | split: '"' | first %}
+          <img src="{{ last_image }}" alt="{{ post.title }}" loading="lazy" />
+        {% else %}
+          <img src="{{ '/assets/img/default-thumbnail.png' | relative_url }}" alt="{{ post.title }}" loading="lazy" />
+        {% endif %}
+      </a>
+    </div>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <small>{{ post.date | date: "%B %d, %Y" }}</small>
+  </div>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-prev">← Newer</a>
+  {% endif %}
+  <span class="pagination-info">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-next">Older →</a>
+  {% endif %}
+</div>
+{% endif %}
