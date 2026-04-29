@@ -2,7 +2,6 @@
 layout: default
 title: "coop state machines"
 ---
-
 # coop state machines
 ### Callable
 

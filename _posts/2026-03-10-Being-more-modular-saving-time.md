@@ -2,7 +2,6 @@
 layout: default
 title: "Being more modular, saving time"
 ---
-
 # Being more modular, saving time
 
 How to apply the texture on the floor and scale it:

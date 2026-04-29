@@ -2,7 +2,6 @@
 layout: default
 title: "Refining Greyboxing"
 ---
-
 # Refining Greyboxing
 
 

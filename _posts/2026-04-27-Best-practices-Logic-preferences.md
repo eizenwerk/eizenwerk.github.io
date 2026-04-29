@@ -2,7 +2,6 @@
 layout: default
 title: "Best practices Logic - preferences"
 ---
-
 # Best practices - Logic preferences
 
 ## Logic preferences

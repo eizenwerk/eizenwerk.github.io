@@ -2,7 +2,6 @@
 layout: default
 title: "Month completed. I am content"
 ---
-
 # Month completed. I am content
 Lets continue with the coop stuff! I want to finish it and then continue with my personal dungeon project. Lets look into the claude chat first, where I asked if synchronizer and spawner are maybe not the best methods.
 

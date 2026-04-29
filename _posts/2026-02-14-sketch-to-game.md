@@ -2,8 +2,7 @@
 layout: default
 title: "sketch to game"
 ---
-#blog
-#reddit
+# sketch to game
 
 It is interesting how the progress of others can look like. Also how bad sketches can look in comparison to the final product.
 

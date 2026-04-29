@@ -2,7 +2,6 @@
 layout: default
 title: "Recettar inspired Game"
 ---
-
 # Recettar inspired Game
 
 Todays plan: Watch some 3D related Tutorials and create a recettar inspired game. The Dungeon is 2,5D if i remember correctly.

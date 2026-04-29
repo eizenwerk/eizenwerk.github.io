@@ -2,8 +2,7 @@
 layout: default
 title: "OSUwesome"
 ---
-#beatgame
-#blog
+# OSUwesome #
 
 I got a youtube video for osu recommended and as I want to get inspired I looked into it. This interface feels so smooth and awesome. I typed in my name and the animation was on peak. Like this:
 

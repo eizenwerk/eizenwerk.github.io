@@ -2,7 +2,6 @@
 layout: default
 title: "Reflection and bullets"
 ---
-
 # Reflection
 
 Two things which are on my mind.

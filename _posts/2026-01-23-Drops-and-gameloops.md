@@ -2,7 +2,6 @@
 layout: default
 title: "Drops and gameloops"
 ---
-
 # Drops and gameloops
 
 ![](/assets/blog/2026-01-23-Drops-and-gameloops/Pasted image 20260123221243.png)

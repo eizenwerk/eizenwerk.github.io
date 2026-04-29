@@ -2,7 +2,6 @@
 layout: default
 title: "Nested Arrays"
 ---
-
 # Nested Arrays
 
 Fuck man, what a chad!

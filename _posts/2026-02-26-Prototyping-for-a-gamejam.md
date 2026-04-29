@@ -2,7 +2,6 @@
 layout: default
 title: "Prototyping for a gamejam"
 ---
-
 # Prototyping for a gamejam
 
 Also, that looks good, someone posted that on jackes discord:

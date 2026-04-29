@@ -2,7 +2,6 @@
 layout: default
 title: "Continuing arrays"
 ---
-
 # Continuing arrays
 
 I need to delve into arrays. I remembered gdquest has an interactive tutorial, which I will use for training.

@@ -2,7 +2,6 @@
 layout: default
 title: "coop coop coop"
 ---
-
 # coop coop coop
 ## Creating weapon animation and syncing
 Content:

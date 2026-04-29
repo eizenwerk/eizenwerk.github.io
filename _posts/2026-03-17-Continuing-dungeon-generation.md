@@ -2,7 +2,6 @@
 layout: default
 title: "Continuing dungeon generation"
 ---
-
 # Continuing dungeon generation
 
 
