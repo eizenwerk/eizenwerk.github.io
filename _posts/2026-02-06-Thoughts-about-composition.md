@@ -1,6 +1,6 @@
 ﻿---
 layout: default
-title: "composition"
+title: "Thoughts about composition"
 ---
 # Thoughts about composition 
 
